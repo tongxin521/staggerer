@@ -49,6 +49,8 @@ $(function() {
                 if (backData.status !== 0) {
                     return layer.msg('登陆失败！');
                 }
+                console.log(backData.token);
+
                 localStorage.setItem('token', backData.token)
                 layer.msg('登陆成功！');
                 window.location.href = './index.html';
