@@ -26,7 +26,7 @@ $(function() {
     // 监听注册form表单
     $('#form_reg').on('submit', function(e) {
             e.preventDefault();
-            $.post('http://ajax.frontend.itheima.net/api/reguser', {
+            $.post('/api/reguser', {
                 username: $('#form_reg [name=username]').val(),
                 password: $('#form_reg [name=password]').val()
             }, function(backData) {
@@ -43,13 +43,13 @@ $(function() {
         e.preventDefault();
         $.ajax({
             method: 'post',
-            url: 'http://ajax.frontend.itheima.net/api/login',
+            url: '/api/login',
             data: $('#form_login').serialize(),
             success: function(backData) {
                 if (backData.status !== 0) {
                     return layer.msg('登陆失败！');
                 }
-                localStorage.setItem(backData.token)
+                localStorage.setItem('token', backData.token)
                 layer.msg('登陆成功！');
                 window.location.href = './index.html';
             }
