@@ -11,8 +11,6 @@ $(function() {
     });
     //从layui中获取表单
     var form = layui.form;
-    console.log(form);
-
     //利用form.verify()设置自定义的表单
     form.verify({
         pwd: [/^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'],
