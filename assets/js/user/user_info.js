@@ -45,7 +45,7 @@ $(function() {
             data: $(this).serialize(),
             success: function(backData) {
                 if (backData.status !== 0) {
-                    return layer.msg('修改用户信息失败！')
+                    return layer.msg('修改用户信息失败！');
                 }
                 window.parent.getUserInfo();
             }
